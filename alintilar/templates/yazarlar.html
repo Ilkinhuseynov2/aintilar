@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Bütün Yazıçılar</title>
+    <link rel="stylesheet" href="{% static 'cssler/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{% static 'cssler/main.css'%}">
+</head>
+<body>
+    <div class="container">
+        <div class="row header-box">
+            <div class="col-md-8">
+                <h1>
+                    <a href="/" style="text-decoration: none">Bütün Yazıçılar</a>
+                </h1>
+            </div>
+            <div class="col-md-4">
+
+            </div>
+        </div>
+    
+{% for i in yazarlar %}
+<div class="row">
+    <center>
+    <div class="col-md-8">
+    <center>
+    <div class="quote" itemscope itemtype="http://schema.org/CreativeWork">
+        <center><img src="{% static 'resimler/'%}{{i.resim}}" width="142" height="186"></center>
+        <span> <small class="author" itemprop="author"><a href="yazar/{{i.yazici}}">{{i.yazici}}</a></small>
+        </span>
+
+    </div></center>
+
+
+    </div>
+    </center>
+
+</div>
+{% endfor %}
+
+</body>
+</html>

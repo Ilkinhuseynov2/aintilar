@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{{yazarr}} tərəfindən bütün Alıntılar</title>
+    <link rel="stylesheet" href="{% static 'cssler/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{% static 'cssler/main.css'%}">
+</head>
+<body>
+    <div class="container">
+        <div class="row header-box">
+            <div class="col-md-8">
+                <h1>
+                    <a href="/" style="text-decoration: none">{{yazarr}} tərəfindən bütün Alıntılar</a>
+                </h1>
+            </div>
+            <div class="col-md-4">
+
+            </div>
+        </div>
+    
+{% for i in alintilar %}
+<div class="row">
+    <center>
+    <div class="col-md-8">
+    <center>
+    <div class="quote" itemscope itemtype="http://schema.org/CreativeWork">
+        <center><img src="{% static 'resimler/'%}{{i.resim}}" width="142" height="186"></center>
+        <center><span class="text" itemprop="text">“{{i.cumle}}”</span></center>
+        <span> <small class="author" itemprop="author">{{i.yazici}}</small>tərəfindən
+        </span>
+
+    </div></center>
+
+
+    </div>
+    </center>
+
+</div>
+{% endfor %}
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <p class="copyright">
+                <span class='sh-red'>❤</span> Created By DARK
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
